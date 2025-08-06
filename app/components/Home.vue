@@ -3,7 +3,7 @@
     <Swiper
       :modules="[Autoplay, Pagination]"
       :loop="true"
-      :autoplay="{ delay: 4000, disableOnInteraction: false }"
+      :autoplay="{ delay: 2000, disableOnInteraction: false }"
       :pagination="{ clickable: true }"
       class="h-full swiper-custom"
     >
