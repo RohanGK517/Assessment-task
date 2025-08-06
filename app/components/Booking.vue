@@ -3,7 +3,7 @@
     <div class="max-w-7xl w-full grid md:grid-cols-2 gap-8 items-center mt-15 ml-5 mr-4">
       <!-- Left Form -->
       <div>
-        <h2 class="text-[40px] title-font font-extrabold mb-6">Book Your Table</h2>
+        <h2 class="text-[40px] title-font font-extrabold mb-6">Book A Table</h2>
 
         <form class="space-y-4 font-[Open_Sans]">
           <input type="text" placeholder="Your Name"
