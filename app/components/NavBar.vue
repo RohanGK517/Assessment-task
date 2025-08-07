@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo">Feane</div>
+      <a href="/"><div class="logo">Feane</div></a>
 
       <!-- Hamburger Icon -->
       <div class="hamburger" @click="toggleMenu">
@@ -10,10 +10,10 @@
 
       <!-- Nav Links -->
       <ul :class="['nav-links', menuOpen ? 'show' : '']">
-        <li><a href="#" class="active">HOME</a></li>
-        <li><a href="#">MENU</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">BOOK TABLE</a></li>
+        <li><a href="/" class="active">HOME</a></li>
+        <li><a href="/menu">MENU</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/booking">BOOK TABLE</a></li>
       </ul>
 
       <div :class="['nav-icons', menuOpen ? 'show-icons' : '']">

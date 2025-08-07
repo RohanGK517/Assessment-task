@@ -41,6 +41,7 @@
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
+    <div class="mb-24"></div>
   </div>
 </template>
 

@@ -13,7 +13,7 @@
      <About />
       <Booking />
       <Reviews />
-      <Footer />
+      <Footer class="mt-16" />
   </div>
 
 </template>
