@@ -37,7 +37,6 @@
             type="date"
             class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-300"
           />
-          
           <button
             type="submit"
             class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2.5 px-10 rounded-full mt-2"
