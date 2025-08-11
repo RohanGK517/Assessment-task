@@ -37,13 +37,13 @@
             type="date"
             class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-300"
           />
-           <BaseButton label="Book Now" extraClasses="bg-green-500 py-2.5 px-10 hover:bg-green-600" @click="bookNow" />
-          <!-- <button
+          
+          <button
             type="submit"
             class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2.5 px-10 rounded-full mt-2"
           >
             BOOK NOW
-          </button> -->
+          </button>
         </form>
       </div>
 
