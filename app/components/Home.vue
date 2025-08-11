@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-[90vh] relative overflow-hidden">
-    <Swiper :modules="[Autoplay, Pagination]" :loop="true" :autoplay="{ delay: 2000, disableOnInteraction: false }"
+    <Swiper :modules="[Autoplay, Pagination]" :loop="true" :autoplay="{ delay: 3000, disableOnInteraction: false }"
       :pagination="{ clickable: true }" class="h-full swiper-custom">
       <SwiperSlide v-for="n in totalSlides" :key="n">
         <div class="relative w-full h-full">

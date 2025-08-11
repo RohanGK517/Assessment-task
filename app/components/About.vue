@@ -27,7 +27,6 @@
           class="bg-yellow-400 mt-6 hover:bg-yellow-500 text-white font-semibold px-6 py-2.5 rounded-full transition-all duration-300 text-sm">
           Read More
         </button>
-
       </div>
 
 
