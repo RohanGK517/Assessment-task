@@ -15,7 +15,7 @@
         prevEl: '#swiper-prev'
       }" class="w-full px-2 sm:px-4">
         <SwiperSlide v-for="(review, index) in reviews" :key="index">
-          <div class="flex flex-col items-center font-[Open_Sans] px-4">
+          <div class="flex flex-col items-start font-[Open_Sans] px-4">
             <div class="bg-[#212529] text-white p-6 rounded-md w-full max-w-md sm:max-w-lg lg:max-w-[44rem] mx-auto">
               <p class="text-left mb-4 text-sm sm:text-base">{{ review.text }}</p>
               <h3 class="text-left font-semibold text-base sm:text-lg">{{ review.name }}</h3>
@@ -23,14 +23,18 @@
             </div>
 
             <div class="relative mt-6">
+              <!-- Arrow pointing to the image -->
               <div
-                class="relative left-1/2 transform -translate-x-1/2 -top-3 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[15px] border-b-[#fbbf24] z-10">
+                class="absolute left-10 -top-3 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[15px] border-b-[#fbbf24] z-10">
               </div>
+
+              <!-- Reviewer Image -->
               <img :src="review.image" alt="Reviewer image"
-                class="relative rounded-full border-[5px] border-[#fbbf24] w-24 h-24 sm:w-28 sm:h-28 object-cover mt-[-13.5px]" />
+                class="relative rounded-full border-[5px] border-[#fbbf24] w-24 h-24 sm:w-28 sm:h-28 object-cover" />
             </div>
           </div>
         </SwiperSlide>
+
       </Swiper>
 
       <!-- Custom Navigation Arrows -->

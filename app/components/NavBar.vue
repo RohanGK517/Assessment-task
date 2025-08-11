@@ -27,28 +27,23 @@
       </ul>
 
 
-<!-- Inside nav-icons -->
-<div :class="['nav-icons', menuOpen ? 'show-icons' : '']">
-  <i class="fas fa-user"></i>
-  <NuxtLink to="/cart" :class="{ active: route.path === '/cart' }">
-    <i class="fas fa-shopping-cart"></i>
-  </NuxtLink>
+      <!-- Inside nav-icons -->
+      <div :class="['nav-icons', menuOpen ? 'show-icons' : '']">
+        <i class="fas fa-user"></i>
+        <NuxtLink to="/cart" :class="{ active: route.path === '/cart' }">
+          <i class="fas fa-shopping-cart"></i>
+        </NuxtLink>
 
-  <!-- Search -->
-  <div class="relative">
-    <i class="fas fa-search cursor-pointer" @click="toggleSearch"></i>
-    <input
-      v-if="showSearch"
-      v-model="searchQuery"
-      @input="emitSearch"
-      type="text"
-      placeholder="Search food..."
-      class="absolute top-full mt-10 px-2 py-1 text-[#e6ac00] text-xl rounded"
-    />
-  </div>
+        <!-- Search -->
+        <div class="relative">
+          <i class="fas fa-search cursor-pointer" @click="toggleSearch"></i>
+          <input v-if="showSearch" v-model="searchQuery" @input="emitSearch" type="text" placeholder="Search food..."
+            class="absolute top-full mt-10 px-2 py-1 text-[#e6ac00] text-xl rounded" />
+        </div>
 
-  <button class="order-btn">Order Online</button>
-</div>
+        <NuxtLink to="/menu" :class="{ active: route.path === '/menu' }"><button class="order-btn">Order Online</button>
+        </NuxtLink>
+      </div>
 
     </div>
   </nav>
