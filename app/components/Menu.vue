@@ -72,13 +72,13 @@
           </div>
         </transition-group>
       </div>
-<!-- 
+ 
       <button
         class="bg-yellow-400 hover:bg-yellow-500 text-white px-10 py-2.5 rounded-full font-[Open_Sans] transition-all duration-300 mt-10 mx-auto block mb-18"
       >
         View More
-      </button> -->
-       <BaseButton label="View More" @click="viewMore" extraClasses="mb-18" />
+      </button> 
+      
     </div>
   </section>
 </template>
