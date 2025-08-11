@@ -1,5 +1,5 @@
 <template>
-    <section class="py-16 mt-32 sm:mt-24 md:mt-16 md:px-12 bg-white overflow-hidden pb-20">
+  <section class="py-16 mt-32 sm:mt-24 md:mt-16 md:px-12 bg-white overflow-hidden pb-20">
 
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl sm:text-4xl font-[Dancing_Script] font-semibold mb-10 sm:mb-12">
@@ -11,16 +11,17 @@
         640: { slidesPerView: 1, spaceBetween: 20 },
         768: { slidesPerView: 2, spaceBetween: 30 }
       }" :navigation="{
-          nextEl: '#swiper-next',
-          prevEl: '#swiper-prev'
-        }" class="w-full px-2 sm:px-4">
+        nextEl: '#swiper-next',
+        prevEl: '#swiper-prev'
+      }" class="w-full px-2 sm:px-4">
         <SwiperSlide v-for="(review, index) in reviews" :key="index">
           <div class="flex flex-col items-center font-[Open_Sans] px-4">
-            <div class="bg-[#212529] text-white p-6 rounded-md w-full max-w-md mx-auto">
+            <div class="bg-[#212529] text-white p-6 rounded-md w-full max-w-md sm:max-w-lg lg:max-w-[44rem] mx-auto">
               <p class="text-left mb-4 text-sm sm:text-base">{{ review.text }}</p>
               <h3 class="text-left font-semibold text-base sm:text-lg">{{ review.name }}</h3>
               <p class="text-left text-xs sm:text-sm">{{ review.detail }}</p>
             </div>
+
             <div class="relative mt-6">
               <div
                 class="relative left-1/2 transform -translate-x-1/2 -top-3 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[15px] border-b-[#fbbf24] z-10">
@@ -71,7 +72,7 @@ const reviews = [
   },
   {
     text:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     name: 'Moana Michell',
     detail: 'magna aliqua',
     image: '/images/user1.png',

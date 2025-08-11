@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-[#1b1b1b] text-white py-12 font-[Open_Sans]">
+  <footer class="bg-[#222831] text-white py-12 font-[Open_Sans]">
     <div class="max-w-[1140px] mx-auto px-4 pt-17 font-[Open_Sans]">
       <!-- Main Footer Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">

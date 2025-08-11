@@ -23,7 +23,7 @@
               20% <span class="text-lg align-bottom">off</span>
             </p>
             <button
-              class="mt-4 bg-yellow-400 text-white px-5 py-2 rounded-full flex items-center justify-center lg:justify-start gap-2 hover:bg-yellow-500 transition font-[Open_Sans]"
+              class="mt-4 cursor-pointer bg-yellow-400 text-white px-5 py-2 rounded-full flex items-center justify-center lg:justify-start gap-2 hover:bg-yellow-500 transition font-[Open_Sans]"
             >
               Order Now
               <i class="fas fa-shopping-cart"></i>

@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 bg-white">
+  <section class="py-16 mb-24 bg-white ">
     <div class="max-w-screen-xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-center mb-10 pt-20">Our Menu</h2>
 
@@ -57,14 +57,15 @@
                   </p>
                 </div>
                 <div class="flex justify-between items-center mt-4">
-                  <span class="text-yellow-400 font-semibold text-lg font-[Open_Sans]">
+                  <span class="text-gray-300 font-semibold text-lg font-[Open_Sans]">
                     ₹{{ item.price }}
                   </span>
-                  <button
+                  <!-- <button
                     class="bg-yellow-500 text-white px-3 py-1.5 rounded-full hover:bg-yellow-600 transition"
                   >
                     <i class="fas fa-shopping-cart"></i>
-                  </button>
+                  </button> -->
+                  <Addcart :dish="item" />
                 </div>
               </div>
             </div>
@@ -73,7 +74,7 @@
       </div>
 
       <button
-        class="bg-yellow-400 hover:bg-yellow-500 text-white px-10 py-2.5 rounded-full font-[Open_Sans] transition-all duration-300 mt-10 mx-auto block"
+        class="bg-yellow-400 hover:bg-yellow-500 text-white px-10 py-2.5 rounded-full font-[Open_Sans] transition-all duration-300 mt-10 mx-auto block mb-18"
       >
         View More
       </button>
@@ -81,104 +82,41 @@
   </section>
 </template>
 
-
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed } from 'vue'
 
-const selectedCategory = ref('All');
-const categories = ['All', 'Burger', 'Pizza', 'Pasta', 'Fries'];
+// ✅ Receive search term from parent (index.vue)
+const props = defineProps({
+  searchTerm: {
+    type: String,
+    default: ''
+  }
+})
+
+const selectedCategory = ref('All')
+const categories = ['All', 'Burger', 'Pizza', 'Pasta', 'Fries']
 
 const allItems = [
-  {
-    id: 1,
-    category: 'Burger',
-    title: 'Chicken Burger',
-    description: 'Juicy chicken burger with lettuce and cheese.',
-    price: 120,
-    image: '/images/menu-1.jpg'
-  },
-  {
-    id: 2,
-    category: 'Pizza',
-    title: 'Pepperoni Pizza',
-    description: 'Loaded with spicy pepperoni and extra cheese.',
-    price: 200,
-    image: '/images/menu-2.jpg'
-  },
-  {
-    id: 3,
-    category: 'Fries',
-    title: 'French Fries',
-    description: 'Crispy golden fries with ketchup.',
-    price: 80,
-    image: '/images/menu-3.jpg'
-  },
-  {
-    id: 4,
-    category: 'Pasta',
-    title: 'Creamy Alfredo',
-    description: 'Delicious creamy white sauce pasta.',
-    price: 150,
-    image: '/images/menu-4.jpg'
-  },
-  {
-    id: 5,
-    category: 'Pizza',
-    title: 'Veggie Pizza',
-    description: 'Fresh veggies topped over cheesy base.',
-    price: 180,
-    image: '/images/menu-5.jpg'
-  },
-  {
-    id: 6,
-    category: 'Burger',
-    title: 'Cheese Burst Burger',
-    description: 'Double cheese patty with onion rings.',
-    price: 140,
-    image: '/images/menu-6.jpg'
-  },
-  {
-    id: 7,
-    category: 'Pizza',
-    title: 'Veg Loaded Pizza',
-    description: 'Loaded with fresh vegetables and cheese.',
-    price: 180,
-    image: '/images/menu-7.jpg'
-  },
-  {
-    id: 8,
-    category: 'Pasta',
-    title: 'Macaroni Cheese Pasta',
-    description: 'Mac & cheese pasta with rich flavor.',
-    price: 150,
-    image: '/images/menu-4.jpg'
-  }
-];
+  { id: 1, category: 'Burger', title: 'Chicken Burger', description: 'Juicy chicken burger with lettuce and cheese.', price: 120, image: '/images/menu-1.jpg' },
+  { id: 2, category: 'Pizza', title: 'Pepperoni Pizza', description: 'Loaded with spicy pepperoni and extra cheese.', price: 200, image: '/images/menu-2.jpg' },
+  { id: 3, category: 'Fries', title: 'French Fries', description: 'Crispy golden fries with ketchup.', price: 80, image: '/images/menu-3.jpg' },
+  { id: 4, category: 'Pasta', title: 'Creamy Alfredo', description: 'Delicious creamy white sauce pasta.', price: 150, image: '/images/menu-4.jpg' },
+  { id: 5, category: 'Pizza', title: 'Veggie Pizza', description: 'Fresh veggies topped over cheesy base.', price: 180, image: '/images/menu-5.jpg' },
+  { id: 6, category: 'Burger', title: 'Cheese Burst Burger', description: 'Double cheese patty with onion rings.', price: 140, image: '/images/menu-6.jpg' },
+  { id: 7, category: 'Pizza', title: 'Veg Loaded Pizza', description: 'Loaded with fresh vegetables and cheese.', price: 180, image: '/images/menu-7.jpg' },
+  { id: 8, category: 'Pasta', title: 'Macaroni Cheese Pasta', description: 'Mac & cheese pasta with rich flavor.', price: 150, image: '/images/menu-4.jpg' }
+]
 
-const filteredItems = computed(() =>
-  selectedCategory.value === 'All'
-    ? allItems
-    : allItems.filter(
-        (item) => item.category === selectedCategory.value
-      )
-);
+const filteredItems = computed(() => {
+  // Normalize search term for case-insensitive matching
+  const term = props.searchTerm.trim().toLowerCase()
+
+  return allItems.filter(item => {
+    const matchesCategory = selectedCategory.value === 'All' || item.category === selectedCategory.value
+    const matchesSearch = term === '' ||
+      item.title.toLowerCase().includes(term) ||
+      item.description.toLowerCase().includes(term)
+    return matchesCategory && matchesSearch
+  })
+})
 </script>
-
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.3s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-/* Image zoom effect only on hover of the card */
-.menu-card:hover .menu-image {
-  transform: scale(1.1);
-}
-</style>
