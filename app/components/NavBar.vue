@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo">Feane</div>
+      <a href="/">
+        <div class="logo">Feane</div>
+      </a>
 
       <!-- Hamburger Icon -->
       <div class="hamburger" @click="toggleMenu">
@@ -10,37 +12,78 @@
 
       <!-- Nav Links -->
       <ul :class="['nav-links', menuOpen ? 'show' : '']">
-        <li><a href="#" class="active">HOME</a></li>
-        <li><a href="#">MENU</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">BOOK TABLE</a></li>
+        <li>
+          <NuxtLink to="/" :class="{ active: route.path === '/' }">HOME</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/menu" :class="{ active: route.path === '/menu' }">MENU</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/about" :class="{ active: route.path === '/about' }">ABOUT</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/booking" :class="{ active: route.path === '/booking' }">BOOK TABLE</NuxtLink>
+        </li>
       </ul>
 
-      <div :class="['nav-icons', menuOpen ? 'show-icons' : '']">
-        <i class="fas fa-user"></i>
-        <i class="fas fa-shopping-cart"></i>
-        <i class="fas fa-search"></i>
-        <button class="order-btn">Order Online</button>
-      </div>
+
+<!-- Inside nav-icons -->
+<div :class="['nav-icons', menuOpen ? 'show-icons' : '']">
+  <i class="fas fa-user"></i>
+  <NuxtLink to="/cart" :class="{ active: route.path === '/cart' }">
+    <i class="fas fa-shopping-cart"></i>
+  </NuxtLink>
+
+  <!-- Search -->
+  <div class="relative">
+    <i class="fas fa-search cursor-pointer" @click="toggleSearch"></i>
+    <input
+      v-if="showSearch"
+      v-model="searchQuery"
+      @input="emitSearch"
+      type="text"
+      placeholder="Search food..."
+      class="absolute top-full mt-10 px-2 py-1 text-[#e6ac00] text-xl rounded"
+    />
+  </div>
+
+  <button class="order-btn">Order Online</button>
+</div>
+
     </div>
   </nav>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-
 const menuOpen = ref(false)
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
 }
+
+const route = useRoute()
+
+const showSearch = ref(false)
+const searchQuery = ref('')
+const emit = defineEmits(['search'])
+
+const toggleSearch = () => {
+  showSearch.value = !showSearch.value
+}
+
+const emitSearch = () => {
+  emit('search', searchQuery.value)
+}
 </script>
+
+
 
 <style scoped>
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(to right, #0f0f0f, #2b2b2b);
+  background: linear-gradient(to right, #0f0f0f, #464646);
   font-family: 'Poppins', sans-serif;
   padding: 16px 0;
 }

@@ -1,12 +1,12 @@
 <template>
-  <footer class="bg-[#1b1b1b] text-white py-12 font-[Open_Sans]">
-    <div class="max-w-[1140px] mx-auto px-4 pt-20 font-[Open_Sans]">
+  <footer class="bg-[#222831] text-white py-12 font-[Open_Sans]">
+    <div class="max-w-[1140px] mx-auto px-4 pt-17 font-[Open_Sans]">
       <!-- Main Footer Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
         
-        <!-- Contact Us -->
+        <!-- Contact Us --> 
         <div class="space-y-4">
-          <h2 class="text-2xl font-bold font-[Dancing_Script] mb-2">Contact Us</h2>
+          <h2 class="text-3xl font-bold font-[Dancing_Script] mb-2">Contact Us</h2>
         
           <p class="flex items-center justify-center gap-2 text-sm hover:text-yellow-400 cursor-pointer">
             <i class="fas fa-map-marker-alt w-4"></i>
@@ -25,7 +25,7 @@
 
         <!-- Feane Center Section -->
         <div class="space-y-4">
-          <h2 class="text-2xl font-bold font-[Dancing_Script]">Feane</h2>
+          <h2 class="text-4xl font-bold font-[Dancing_Script]">Feane</h2>
           <p class="text-sm leading-relaxed px-4">
             Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
           </p>
@@ -40,7 +40,7 @@
 
         <!-- Opening Hours -->
         <div class="space-y-4">
-          <h2 class="text-2xl font-bold font-[Dancing_Script] mb-2">Opening Hours</h2>
+          <h2 class="text-3xl font-bold font-[Dancing_Script] mb-2">Opening Hours</h2>
           <p class="text-sm">Everyday</p>
           <p class="text-sm">10.00 Am -10.00 Pm</p>
         </div>

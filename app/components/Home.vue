@@ -1,23 +1,12 @@
 <template>
   <div class="w-full h-[90vh] relative overflow-hidden">
-    <Swiper
-      :modules="[Autoplay, Pagination]"
-      :loop="true"
-      :autoplay="{ delay: 4000, disableOnInteraction: false }"
-      :pagination="{ clickable: true }"
-      class="h-full swiper-custom"
-    >
+    <Swiper :modules="[Autoplay, Pagination]" :loop="true" :autoplay="{ delay: 2000, disableOnInteraction: false }"
+      :pagination="{ clickable: true }" class="h-full swiper-custom">
       <SwiperSlide v-for="n in totalSlides" :key="n">
-        <div
-          class="relative w-full h-full"
-        >
-          <!-- Text content -->
+        <div class="relative w-full h-full">
           <div
-            class="absolute top-[6%] md:top-[10%] left-4 md:left-28 max-w-lg text-white z-10 px-4 md:px-0"
-          >
-            <h1
-              class="text-2xl sm:text-3xl md:text-5xl font-bold font-['Dancing_Script'] mb-4"
-            >
+            class="absolute top-[6%] md:top-[10%] left-[1.00rem] md:left-[5.5rem] max-w-xl text-white z-10 px-4 md:px-0">
+            <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold font-['Dancing_Script'] mb-4">
               Fast Food Restaurant
             </h1>
             <p class="text-sm sm:text-base font-['Open_Sans'] mb-6">
@@ -27,16 +16,17 @@
               quos nihil ducimus libero ipsam.
             </p>
             <button
-              class="bg-[#ffbe33] font-['Open_Sans'] text-white px-6 py-2 rounded-full text-sm md:text-base hover:bg-[#e88e00] transition"
-            >
+              class="bg-[#ffbe33] font-['Open_Sans'] text-white px-6 py-2 rounded-full text-sm md:text-base hover:bg-[#e88e00] transition">
               Order Now
             </button>
           </div>
+
         </div>
       </SwiperSlide>
     </Swiper>
   </div>
 </template>
+
 
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
@@ -68,7 +58,6 @@ const totalSlides = 3
 </style>
 
 <style>
-
 html,
 body {
   overflow-x: hidden;
